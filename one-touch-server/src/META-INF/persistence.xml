@@ -3,6 +3,16 @@
 	<persistence-unit name="one-touch">
 	    
 	    <class>com.up.onetouch.bean.Usuario</class>
+	    <class>com.up.onetouch.bean.Compra</class>
+	    <class>com.up.onetouch.bean.CompraStatus</class>
+	    <class>com.up.onetouch.bean.ItemCompra</class>
+	    <class>com.up.onetouch.bean.Loja</class>
+	    <class>com.up.onetouch.bean.LojaCategoria</class>
+	    <class>com.up.onetouch.bean.Produto</class>
+	    <class>com.up.onetouch.bean.ProdutoCategoria</class>
+	    <class>com.up.onetouch.bean.Servico</class>
+	    <class>com.up.onetouch.bean.TipoServico</class>
+	    <class>com.up.onetouch.bean.Visita</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
