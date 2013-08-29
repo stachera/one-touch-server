@@ -21,7 +21,7 @@ import javax.servlet.annotation.WebFilter;
 import com.up.onetouch.dao.Connection;
 import com.up.onetouch.dao.GenericDAO;
 
-@WebFilter(servletNames = { "jersey-serlvet" } )
+@WebFilter(servletNames = { "jersey-serlvet", "faces-servlet" } )
 public class JPAFilter implements Filter {
 	
 	private Map<String,EntityManagerFactory> mapFactory = new HashMap<String,EntityManagerFactory>();
