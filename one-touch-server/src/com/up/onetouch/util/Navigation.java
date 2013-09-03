@@ -13,15 +13,14 @@ public class Navigation {
 	public static void redirectLocalPage(String page){
 		FacesContext fc = FacesContext.getCurrentInstance();
     	ConfigurableNavigationHandler nav = (ConfigurableNavigationHandler) fc.getApplication().getNavigationHandler();
-    	nav.performNavigation("/pages/" + page + "?faces-redirect=true");
+    	nav.performNavigation("/pages/" + page + ".jsf?faces-redirect=true");
 	}
 	
 	public static void redirectPage(String page){
 		FacesContext fc = FacesContext.getCurrentInstance();
 		try {
-			fc.getExternalContext().redirect(fc.getExternalContext().getRequestContextPath() + "/pages/" + page);
+			fc.getExternalContext().redirect(fc.getExternalContext().getRequestContextPath() + "/pages/" + page + ".jsf");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

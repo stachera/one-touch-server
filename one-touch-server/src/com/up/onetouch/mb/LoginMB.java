@@ -9,12 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import com.up.onetouch.bean.Usuario;
-
-import bo.SisUsuarioBO;
-
-import util.MD5;
-import util.Navigation;
-import vo.SisUsuario;
+import com.up.onetouch.bo.UsuarioBO;
+import com.up.onetouch.util.Navigation;
 
 @ManagedBean
 @SessionScoped
@@ -23,11 +19,9 @@ public class LoginMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Usuario usuario;
 	
-	public LoginMB() {
-		usuario = new Usuario();
-	}
-	
 	public Usuario getUsuario() {
+		if(usuario == null)
+			usuario = new Usuario();
 		return usuario;
 	}
 
@@ -36,17 +30,18 @@ public class LoginMB implements Serializable {
 	}
 	
     public void login() {    	
-    	String senhaMD5 = MD5.stringToMD5(usuario.getSenha());
-		usuario.setSenha(senhaMD5);
-		
-		usuario = (new SisUsuarioBO()).getUsuarioByLogin(usuario);
+		try {
+			usuario = new UsuarioBO().getByLogin(usuario.getLogin());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     	
-    	if(usuario != null || usuario.getId() != 0){
+    	if(usuario != null && usuario.getId() != 0){
         	Navigation.redirectLocalPage("main");
-    	} else {        
+    	} else {
         	FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_WARN,"Atenção", "Usuário ou senha inválidos!");
         	FacesContext.getCurrentInstance().addMessage("form", msg);
-        }    
+        }
     }
     
     public boolean isLogged(){

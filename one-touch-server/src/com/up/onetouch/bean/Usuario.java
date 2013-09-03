@@ -19,7 +19,7 @@ public class Usuario implements Serializable {
 
 	@Id
 	@Column(unique = true, nullable = false)
-	private int id;
+	private Integer id;
 
 	@Column(length = 128)
 	private String facebookId;
@@ -33,11 +33,11 @@ public class Usuario implements Serializable {
 	public Usuario() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
