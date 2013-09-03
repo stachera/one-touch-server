@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">	
+<p:menu id="menuActions">  
+	<p:submenu id="submenuOpcoes" label="Opções"> 
+		<p:menuitem id="actionNew" value="Novo" icon="ui-icon-document" actionListener="#{bean['actionNew']}" update=":formMain:pnMain,:formMain:tableMain" process="@this" immediate="true" />
+		<p:menuitem id="actionPersist" value="Salvar" icon="ui-icon-disk" actionListener="#{bean['actionPersist']}" update=":formMain:pnMain,:formMain:tableMain" process="@form" />  
+		<p:menuitem id="actionRemove" value="Excluir" icon="ui-icon-trash" actionListener="#{bean['actionRemove']}" update=":formMain:pnMain,:formMain:tableMain" process="@form" />
+		<p:separator/>
+		<p:menuitem id="actionClosePage" value="Fechar" icon="ui-icon-circle-close" actionListener="#{bean['actionClosePage']}" immediate="true" />  
+	</p:submenu>  
+</p:menu>
+</ui:composition>

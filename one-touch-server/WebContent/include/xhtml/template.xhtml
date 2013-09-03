@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:view contentType="text/html" locale="pt_BR">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <link type="text/css" rel="stylesheet" href="#{request.contextPath}/include/css/style.css" />                               
+                <title><ui:insert name="pageTitle"></ui:insert></title>
+            </f:facet>
+            <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/include/js/jquery.maskMoney.js"></script>
+            <script type="text/javascript">
+            	PrimeFaces.locales['pt_BR'] = {
+                    closeText: 'Fechar',
+                    prevText: 'Anterior',
+                    nextText: 'Próximo',
+                    currentText: 'Começo',
+                    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul','Ago','Set','Out','Nov','Des'],
+                    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+                    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
+                    dayNamesMin: ['D','S','T','Q','Q','S','S'],
+                    weekHeader: 'Semana',
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: '',
+                    timeOnlyTitle: 'Só Horas',
+                    timeText: 'Tempo',
+                    hourText: 'Hora',
+                    minuteText: 'Minuto',
+                    secondText: 'Segundo',
+                    ampm: false,
+                    month: 'Mês',
+                    week: 'Semana',
+                    day: 'Dia',
+                    allDayText : 'Todo Dia'
+                };
+            </script>
+        </h:head>
+        <h:body>        
+                
+       	<!--  pageBody -->
+		<ui:insert name="pageBody">
+			<h:form id="formMain">
+			<p:layout id="layoutMain" fullPage="true">
+												
+				<!--  header -->
+			    <ui:insert name="header">
+			    	<p:layoutUnit id="layoutHeader" position="north" size="50">
+			    		<ui:insert name="layoutNorth">
+				        	<p:menubar> 
+				        		<p:menuitem value="Teste" url="assinatura.jsf" icon="ui-icon-document" />  
+				        		<p:menuitem value="Sair" actionListener="#{loginMB.logout}" icon="ui-icon-power" process="@this" immediate="true" update="@none" />   
+				        	</p:menubar>
+				    	</ui:insert>						
+					</p:layoutUnit>					
+			    </ui:insert>
+						
+				<!--  center -->
+				<p:layoutUnit id="layoutCenter" position="center">					
+					<ui:insert name="center"></ui:insert>					
+			    </p:layoutUnit>			    
+			    
+			    <!--  footer -->
+			    <ui:insert name="footer">
+			    	<p:layoutUnit id="layoutFooter" position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+						<ui:insert name="layoutSouth"></ui:insert>
+					</p:layoutUnit>
+			    </ui:insert>
+			    
+			    <!--  left -->
+			    <ui:insert name="left">
+			    	<p:layoutUnit id="layoutLeft" position="west" size="165" resizable="true" closable="true" collapsible="true">
+						<ui:insert name="layoutWest"></ui:insert>
+					</p:layoutUnit>
+			    </ui:insert>
+			    
+			    <!--  right -->
+			    <ui:insert name="right">
+			    	<p:layoutUnit id="layoutRight" position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+						<ui:insert name="layoutEast"></ui:insert>
+					</p:layoutUnit>
+			    </ui:insert>			
+			</p:layout>
+			</h:form>
+		</ui:insert>
+		
+		<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();"/>  
+              
+		<p:dialog modal="true" widgetVar="statusDialog"  draggable="false" closable="false" showHeader="false" resizable="false">  
+		    <h:graphicImage url="../include/img/ajax-loader.gif"/>
+		</p:dialog>  
+		
+		</h:body>
+	</f:view>
+</html>

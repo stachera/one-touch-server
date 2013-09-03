@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition template="/include/xhtml/template.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="pageTitle">Usuário</ui:define>
+	<ui:define name="center">	
+	
+		<p:panel id="pnMain" header="Usuário">
+		
+			<p:growl id="messages" showDetail="true"/>
+
+			<h:panelGrid columns="2">
+				<h:outputLabel for="uid" value="ID: " />  
+			    <h:outputText id="uid" value="#{usuarioMB.entity.id}" />
+			  
+			    <h:outputLabel for="login" value="Login:" />  
+			    <p:inputText id="login" value="#{usuarioMB.entity.login}" required="true"  />
+			    
+			    <h:outputLabel for="senha" value="Senha:" />  
+			    <p:inputText id="senha" value="#{usuarioMB.entity.senha}" required="true" />
+			    
+			</h:panelGrid>
+		</p:panel>		
+		
+		<p:spacer height="10px" />
+ 			
+		<p:dataTable emptyMessage="" id="tableMain" 
+			value="#{usuarioMB.entityList}" var="i" rows="10" filterEvent="enter" 
+			paginator="true" selection="#{usuarioMB.entitySelect}" selectionMode="single" rowKey="#{i}" >
+			
+			<f:facet name="header">  
+            	Usuários
+        	</f:facet>
+
+			<p:ajax event="rowSelect" update=":formMain:pnMain"  />
+			
+			<p:column headerText="ID">
+				<h:outputText value="#{i.id}" />
+			</p:column>  
+ 		  				
+			<p:column headerText="Usuário">
+				<h:outputText value="#{i.login}" />
+			</p:column>  
+
+    	</p:dataTable>
+    	
+	</ui:define>
+	<ui:define name="layoutWest">	
+		<ui:include src="/include/xhtml/menuActions.xhtml">
+			<ui:param name="bean" value="#{usuarioMB}" />		
+		</ui:include>
+	</ui:define>
+	<ui:define name="right"></ui:define>
+	<ui:define name="footer"></ui:define>	
+</ui:composition>

@@ -1,0 +1,44 @@
+body {font-size: 10px;}
+td {text-align: left;}
+
+.ui-layout-north {
+	z-index:20 !important;
+    overflow:visible !important;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	overflow:visible !important;
+}
+
+label{ 
+	display: block;
+	min-width: 100px;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.ui-selectonemenu label{
+	text-align: left;
+}
+
+
+.ui-datatable .ui-datatable-data td.cellYellow, .ui-datatable .ui-datatable-data-empty td.cellYellow{
+	background-color: yellow;
+	padding:0;
+	margin:0;
+	width: 1px;
+}
+
+.ui-datatable .ui-datatable-data td.cellGreen, .ui-datatable .ui-datatable-data-empty td.cellGreen{
+	background-color: green;
+	padding:0;
+	margin:0;
+	width: 1px;
+}
+
+.ui-datatable .ui-datatable-data td.cellRed, .ui-datatable .ui-datatable-data-empty td.cellRed{
+	background-color: red;
+	padding:0;
+	margin:0;
+	width: 1px;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<ui:composition template="/include/xhtml/template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="pageTitle">Login</ui:define>	
+	<ui:define name="pageBody">
+		<div style="width: 250px; margin: 30px auto; text-align: center;">		
+			<h:form id="formLogin" onkeypress="if(event.keyCode == 13){return false;}">
+			
+     			<br/>     
+     			<p:messages for="formLogin" id="messages" showDetail="true" autoUpdate="true" />
+     			<br/>     			
+     			
+     			<h:panelGrid columns="2">     				
+     				<h:outputLabel for="login" value="Login:" style="min-width: 50px;" />
+		            <p:inputText value="#{loginMB.usuario.login}"
+		                    id="login" required="true" requiredMessage="O campo Login é obrigatório"  />
+		              
+		            <h:outputLabel for="senha" value="Senha:" style="min-width: 50px;" />  
+		            <p:password value="#{loginMB.usuario.senha}"  onkeypress="if(event.keyCode == 13){ $('#formLogin\\:loginButton').click(); }" 
+		                    id="senha" required="true" requiredMessage="O campo Senha é obrigatório"  />
+		                    
+		            <f:facet name="footer">
+			            <p:spacer width="65" height="10" />
+			            <p:commandButton id="loginButton" value="Entrar" icon="ui-icon-locked"    
+			                    actionListener="#{loginMB.login}" />			            
+		            </f:facet>
+				</h:panelGrid>
+				<p:focus for="login" /> 
+			</h:form>
+		</div>
+	</ui:define>		
+</ui:composition>
