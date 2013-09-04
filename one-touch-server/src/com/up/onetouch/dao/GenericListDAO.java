@@ -16,8 +16,8 @@ public class GenericListDAO<E> {
 
 	protected final EntityManager entityManager;
 	
-	public GenericListDAO(String persistenceUnitName) {
-		entityManager = Connection.getInstance().getEntityManager(persistenceUnitName);
+	public GenericListDAO() {
+		entityManager = Connection.getInstance().getEntityManager();
 	}
 
 	public E find(Class<E> classEntity, Object primaryKey) throws Exception {

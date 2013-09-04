@@ -22,18 +22,9 @@ public class BO<E extends Serializable> implements Serializable {
 
     private String persistenceUnitName;
 
-    public BO() {
-        this.persistenceUnitName = GenericDAO.PERSISTUNIT;
-    }
-
-    
-    public BO(String persistenceUnitName) {
-        this.persistenceUnitName = persistenceUnitName;
-    }
-
     public GenericDAO<E> getDao() {
         if (this.dao == null) {
-            this.dao = new GenericDAO<E>(persistenceUnitName);
+            this.dao = new GenericDAO<E>();
         }
         return this.dao;
     }

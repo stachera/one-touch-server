@@ -15,7 +15,6 @@ public class LoginBO extends BO<Usuario>  {
 	private transient Logger log = Logger.getLogger(LoginBO.class);
 
 	public LoginBO() {
-		super(GenericDAO.PERSISTUNIT);
 		setClazz(Usuario.class);
 	}
 

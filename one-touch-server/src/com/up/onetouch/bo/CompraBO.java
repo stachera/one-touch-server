@@ -12,7 +12,6 @@ public class CompraBO extends BO<Compra>  {
 	private transient Logger log = Logger.getLogger(CompraBO.class);
 
 	public CompraBO() {
-		super(GenericDAO.PERSISTUNIT);
 		setClazz(Compra.class);
 	}
 

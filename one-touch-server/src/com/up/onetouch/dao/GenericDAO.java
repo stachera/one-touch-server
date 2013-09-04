@@ -16,12 +16,10 @@ public class GenericDAO<E> extends GenericListDAO<E> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	public static final String PERSISTUNIT = "one-touch";
-	
 	private transient Logger log = Logger.getLogger(GenericDAO.class);
 	
-	public GenericDAO(String persistenceUnitName) {
-	    super(persistenceUnitName);
+	public GenericDAO() {
+	    super();
 	}
 
 	public boolean persist(E entity) throws Exception {

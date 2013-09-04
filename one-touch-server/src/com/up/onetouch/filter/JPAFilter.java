@@ -1,4 +1,4 @@
-package com.up.onetouch.filter;
+/*package com.up.onetouch.filter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class JPAFilter implements Filter {
 		try {
 			for(String persistUnit : getListPersistUnit()){
 				EntityManager em = getMapFactory().get(persistUnit).createEntityManager();
-				Connection.getInstance().getEm().put("EntityManager" + persistUnit, em);	
+				request.setAttribute("EntityManager" + persistUnit, em);
 			}
 			
 			chain.doFilter(request, response);			
@@ -56,7 +56,7 @@ public class JPAFilter implements Filter {
 		catch (final Exception ignore) {
 		}finally{			
 			for(String persistUnit : getListPersistUnit()){
-				EntityManager em = (EntityManager) Connection.getInstance().getEm().get("EntityManager" + persistUnit);				
+				EntityManager em = (EntityManager) Connection.getInstance().getEntityManager(request, "EntityManager" + persistUnit);				
 				if(em != null && em.isOpen()){
 					em.close();
 				}
@@ -86,4 +86,4 @@ public class JPAFilter implements Filter {
 	public void setListPersistUnit(List<String> listPersistUnit) {
 		this.listPersistUnit = listPersistUnit;
 	}
-}
+}*/

@@ -12,7 +12,6 @@ public class LojaCategoriaBO extends BO<LojaCategoria>  {
 	private transient Logger log = Logger.getLogger(LojaCategoriaBO.class);
 
 	public LojaCategoriaBO() {
-		super(GenericDAO.PERSISTUNIT);
 		setClazz(LojaCategoria.class);
 	}
 

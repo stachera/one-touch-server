@@ -12,7 +12,6 @@ public class VisitaBO extends BO<Visita>  {
 	private transient Logger log = Logger.getLogger(VisitaBO.class);
 
 	public VisitaBO() {
-		super(GenericDAO.PERSISTUNIT);
 		setClazz(Visita.class);
 	}
 

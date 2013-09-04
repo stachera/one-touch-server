@@ -12,7 +12,6 @@ public class ServicoBO extends BO<Servico>  {
 	private transient Logger log = Logger.getLogger(ServicoBO.class);
 
 	public ServicoBO() {
-		super(GenericDAO.PERSISTUNIT);
 		setClazz(Servico.class);
 	}
 

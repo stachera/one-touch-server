@@ -27,8 +27,8 @@
 			<property name="c3p0.acquire_increment" value="1" /> 
 			<property name="c3p0.idle_test_period" value="100" /> 
 			<property name="c3p0.max_size" value="20" /> 
-			<property name="c3p0.max_statements" value="0" /> 
-			<property name="c3p0.min_size" value="2" /> 
+			<property name="c3p0.max_statements" value="10" /> 
+			<property name="c3p0.min_size" value="3" /> 
 			<property name="c3p0.timeout" value="30" />
 		</properties>
 	    
