@@ -17,17 +17,17 @@ public class Compra implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
-	private int compraId;
+	private Integer compraId;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable=false)
 	private Date compraData;
 
 	@Column(nullable=false)
-	private int statusId;
+	private Integer statusId;
 
 	@Column(nullable=false)
-	private int usuarioId;
+	private Integer usuarioId;
 
 	//bi-directional many-to-one association to ItemCompra
 	@OneToMany(mappedBy="compra")

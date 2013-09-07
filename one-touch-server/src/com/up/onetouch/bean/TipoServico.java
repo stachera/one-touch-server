@@ -31,11 +31,11 @@ public class TipoServico implements Serializable {
 	public TipoServico() {
 	}
 
-	public int getTipoServicoId() {
+	public Integer getTipoServicoId() {
 		return this.tipoServicoId;
 	}
 
-	public void setTipoServicoId(int tipoServicoId) {
+	public void setTipoServicoId(Integer tipoServicoId) {
 		this.tipoServicoId = tipoServicoId;
 	}
 
@@ -47,11 +47,11 @@ public class TipoServico implements Serializable {
 		this.tipoServicoNome = tipoServicoNome;
 	}
 
-	public float getTipoServicoValor() {
+	public Float getTipoServicoValor() {
 		return this.tipoServicoValor;
 	}
 
-	public void setTipoServicoValor(float tipoServicoValor) {
+	public void setTipoServicoValor(Float tipoServicoValor) {
 		this.tipoServicoValor = tipoServicoValor;
 	}
 

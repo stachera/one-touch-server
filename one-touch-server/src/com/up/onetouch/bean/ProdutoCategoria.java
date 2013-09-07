@@ -23,11 +23,11 @@ public class ProdutoCategoria implements Serializable {
 	public ProdutoCategoria() {
 	}
 
-	public int getCategoriaId() {
+	public Integer getCategoriaId() {
 		return this.categoriaId;
 	}
 
-	public void setCategoriaId(int categoriaId) {
+	public void setCategoriaId(Integer categoriaId) {
 		this.categoriaId = categoriaId;
 	}
 

@@ -30,7 +30,7 @@ public class Produto implements Serializable {
 	@Column(nullable=false, length=45)
 	private String produtoNome;
 
-	private float produtoPreco;
+	private Float produtoPreco;
 
 	//bi-directional many-to-one association to ItemCompra
 	@OneToMany(mappedBy="produto")
@@ -39,27 +39,27 @@ public class Produto implements Serializable {
 	public Produto() {
 	}
 
-	public int getProdutoId() {
+	public Integer getProdutoId() {
 		return this.produtoId;
 	}
 
-	public void setProdutoId(int produtoId) {
+	public void setProdutoId(Integer produtoId) {
 		this.produtoId = produtoId;
 	}
 
-	public int getCategoriaId() {
+	public Integer getCategoriaId() {
 		return this.categoriaId;
 	}
 
-	public void setCategoriaId(int categoriaId) {
+	public void setCategoriaId(Integer categoriaId) {
 		this.categoriaId = categoriaId;
 	}
 
-	public int getLojaId() {
+	public Integer getLojaId() {
 		return this.lojaId;
 	}
 
-	public void setLojaId(int lojaId) {
+	public void setLojaId(Integer lojaId) {
 		this.lojaId = lojaId;
 	}
 
@@ -79,11 +79,11 @@ public class Produto implements Serializable {
 		this.produtoNome = produtoNome;
 	}
 
-	public float getProdutoPreco() {
+	public Float getProdutoPreco() {
 		return this.produtoPreco;
 	}
 
-	public void setProdutoPreco(float produtoPreco) {
+	public void setProdutoPreco(Float produtoPreco) {
 		this.produtoPreco = produtoPreco;
 	}
 

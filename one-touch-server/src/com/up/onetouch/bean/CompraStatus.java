@@ -15,7 +15,7 @@ public class CompraStatus implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
-	private int statusId;
+	private Integer statusId;
 
 	@Column(nullable=false, length=45)
 	private String statusNome;
@@ -23,11 +23,11 @@ public class CompraStatus implements Serializable {
 	public CompraStatus() {
 	}
 
-	public int getStatusId() {
+	public Integer getStatusId() {
 		return this.statusId;
 	}
 
-	public void setStatusId(int statusId) {
+	public void setStatusId(Integer statusId) {
 		this.statusId = statusId;
 	}
 

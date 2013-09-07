@@ -15,7 +15,7 @@ public class Loja implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
-	private int lojaId;
+	private Integer lojaId;
 
 	@Column(nullable=false, length=50)
 	private String lojaEmail;
@@ -42,11 +42,11 @@ public class Loja implements Serializable {
 	public Loja() {
 	}
 
-	public int getLojaId() {
+	public Integer getLojaId() {
 		return this.lojaId;
 	}
 
-	public void setLojaId(int lojaId) {
+	public void setLojaId(Integer lojaId) {
 		this.lojaId = lojaId;
 	}
 

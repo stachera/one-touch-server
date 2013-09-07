@@ -16,10 +16,10 @@ public class Visita implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
-	private int visitaId;
+	private Integer visitaId;
 
 	@Column(nullable=false)
-	private int usuarioId;
+	private Integer usuarioId;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date visitaDataFim;
@@ -31,19 +31,19 @@ public class Visita implements Serializable {
 	public Visita() {
 	}
 
-	public int getVisitaId() {
+	public Integer getVisitaId() {
 		return this.visitaId;
 	}
 
-	public void setVisitaId(int visitaId) {
+	public void setVisitaId(Integer visitaId) {
 		this.visitaId = visitaId;
 	}
 
-	public int getUsuarioId() {
+	public Integer getUsuarioId() {
 		return this.usuarioId;
 	}
 
-	public void setUsuarioId(int usuarioId) {
+	public void setUsuarioId(Integer usuarioId) {
 		this.usuarioId = usuarioId;
 	}
 

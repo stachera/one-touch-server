@@ -22,6 +22,4 @@ public class CompraBO extends BO<Compra>  {
 	public void setLog(Logger log) {
 		this.log = log;
 	}
-	
-	
 }

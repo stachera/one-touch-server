@@ -28,7 +28,7 @@ public class LojaCategoria implements Serializable {
 	public LojaCategoria() {
 	}
 
-	public int getCategoriaId() {
+	public Integer getCategoriaId() {
 		return this.categoriaId;
 	}
 

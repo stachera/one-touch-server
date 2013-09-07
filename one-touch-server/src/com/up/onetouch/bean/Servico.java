@@ -17,7 +17,7 @@ public class Servico implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
-	private int servicoId;
+	private Integer servicoId;
 
 	private byte servicoConcluido;
 
@@ -33,7 +33,7 @@ public class Servico implements Serializable {
 
 	private byte servicoPago;
 
-	private float servicoValor;
+	private Float servicoValor;
 
 	//bi-directional many-to-one association to ItemCompra
 	@OneToMany(mappedBy="servico")
@@ -52,11 +52,11 @@ public class Servico implements Serializable {
 	public Servico() {
 	}
 
-	public int getServicoId() {
+	public Integer getServicoId() {
 		return this.servicoId;
 	}
 
-	public void setServicoId(int servicoId) {
+	public void setServicoId(Integer servicoId) {
 		this.servicoId = servicoId;
 	}
 
@@ -100,11 +100,11 @@ public class Servico implements Serializable {
 		this.servicoPago = servicoPago;
 	}
 
-	public float getServicoValor() {
+	public Float getServicoValor() {
 		return this.servicoValor;
 	}
 
-	public void setServicoValor(float servicoValor) {
+	public void setServicoValor(Float servicoValor) {
 		this.servicoValor = servicoValor;
 	}
 

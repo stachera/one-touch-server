@@ -15,9 +15,9 @@ public class ItemCompra implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
-	private int itemId;
+	private Integer itemId;
 
-	private float itemValor;
+	private Float itemValor;
 
 	//bi-directional many-to-one association to Compra
 	@ManyToOne
@@ -37,7 +37,7 @@ public class ItemCompra implements Serializable {
 	public ItemCompra() {
 	}
 
-	public int getItemId() {
+	public Integer getItemId() {
 		return this.itemId;
 	}
 
@@ -45,11 +45,11 @@ public class ItemCompra implements Serializable {
 		this.itemId = itemId;
 	}
 
-	public float getItemValor() {
+	public Float getItemValor() {
 		return this.itemValor;
 	}
 
-	public void setItemValor(float itemValor) {
+	public void setItemValor(Float itemValor) {
 		this.itemValor = itemValor;
 	}
 
